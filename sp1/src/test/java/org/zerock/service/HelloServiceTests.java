@@ -17,12 +17,20 @@ import lombok.extern.log4j.Log4j;
 public class HelloServiceTests {
 
 	@Setter(onMethod_ = @Autowired)
-	public HelloService service;
+	private HelloService service;
+	
+	@Autowired
+	private Restaurant restaurant;
 	
 	
 	@Test
 	public void testExitst() {
 		log.info(service);
 		assertNotNull(service);
+	}
+	
+	@Test
+	public void testChef() {
+		restaurant.order();
 	}
 }

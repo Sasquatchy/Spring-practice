@@ -7,4 +7,15 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<context:component-scan base-package="org.zerock.service"></context:component-scan>		
+	
+	<!-- 이 방식은 annotation등장 이전의 오래된 방식이다. -->
+	<!-- 레스토랑의 경우 생성자를 통해서 호출해야 한다. -->
+	<!-- constructor-arg로 처리해준다. -->
+<!-- 	<bean id="chef" class="org.zerock.service.Chef"></bean>
+	생성자가 있기에 문제가 생긴다. 참조값이 필요하기때문에 족쇄가 된다.
+	<bean id="restaurant" class="org.zerock.service.Restaurant">
+		<constructor-arg ref="chef"></constructor-arg>
+		<property name="chef" ref="chef"></property>
+	</bean> -->
+	<!-- 이제 비로소 재대로 연결이 되었다. -->
 </beans>
